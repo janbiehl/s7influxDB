@@ -1,0 +1,7 @@
+#!/bin/bash
+mkdir $HOME/s7influxDB
+mkdir $HOME/s7influxDB/telegraf
+
+cp ./docker-compose.yml $HOME/s7influxDB
+cp ../telegraf.config $HOME/s7influxDB/telegraf
+

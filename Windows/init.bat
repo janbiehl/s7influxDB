@@ -5,4 +5,4 @@ mkdir %BASEPATH%
 xcopy docker-compose.yml %BASEPATH%
 
 mkdir %TELEGRAFPATH%
-xcopy .\telegraf.config %TELEGRAFPATH%
+xcopy ..\telegraf.config %TELEGRAFPATH%

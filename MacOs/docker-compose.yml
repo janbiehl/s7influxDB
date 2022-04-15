@@ -5,7 +5,7 @@ services:
     image: influxdb:latest
     volumes:
       # Mount for influxdb data directory and configuration
-      - $HOME/docker/influx:/var/lib/influxdb2:rw
+      - $HOME/s7influxDB:/var/lib/influxdb2:rw
     ports:
       - "8086:8086"
   # Use the influx cli to set up an influxdb instance. 
@@ -15,7 +15,7 @@ services:
     image: influxdb:latest
     volumes:
       # Mount for influxdb data directory and configuration
-      - $HOME/docker/influx:/var/lib/influxdb2:rw
+      - $HOME/s7influxDB:/var/lib/influxdb2:rw
       - ./ssl/influxdb-selfsigned.crt:/etc/ssl/influxdb-selfsigned.crt:rw
       - ./ssl/influxdb-selfsigned.key:/etc/ssl/influxdb-selfsigned.key:rw
     environment: 
@@ -38,7 +38,7 @@ services:
       - influxdb
     volumes:
       # Mount for telegraf config
-      - /Users/jan/docker/influx/telegraf/mytelegraf.conf:/etc/telegraf/telegraf.conf
+      - $HOME/s7influxDB/telegraf/telegraf.config:/etc/telegraf/telegraf.conf
 #    env_file:
 #      - ./influxv2.env
     ports:
