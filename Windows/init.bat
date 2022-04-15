@@ -6,3 +6,6 @@ xcopy docker-compose.yml %BASEPATH%
 
 mkdir %TELEGRAFPATH%
 xcopy ..\telegraf.config %TELEGRAFPATH%
+
+cd C:\s7InfluxDB
+docker compose up
