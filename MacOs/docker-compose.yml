@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   influxdb:
     container_name: influxdb
@@ -8,7 +8,7 @@ services:
       - $HOME/docker/influx:/var/lib/influxdb2:rw
     ports:
       - "8086:8086"
-  # Use the influx cli to set up an influxdb instance. 
+  # Use the influx cli to set up an influxdb instance.
   influxdb_cli:
     links:
       - influxdb
@@ -18,8 +18,8 @@ services:
       - $HOME/docker/influx:/var/lib/influxdb2:rw
       - ./ssl/influxdb-selfsigned.crt:/etc/ssl/influxdb-selfsigned.crt:rw
       - ./ssl/influxdb-selfsigned.key:/etc/ssl/influxdb-selfsigned.key:rw
-    environment: 
-       # Use these same configurations parameters in your telegraf configuration, mytelegraf.conf.
+    environment:
+      # Use these same configurations parameters in your telegraf configuration, mytelegraf.conf.
       - DOCKER_INFLUXDB_INIT_MODE=setup
       - DOCKER_INFLUXDB_INIT_USERNAME=J.Biehl
       - DOCKER_INFLUXDB_INIT_PASSWORD=Test1234
@@ -39,11 +39,11 @@ services:
     volumes:
       # Mount for telegraf config
       - /Users/jan/docker/influx/telegraf/mytelegraf.conf:/etc/telegraf/telegraf.conf
-#    env_file:
-#      - ./influxv2.env
+    #    env_file:
+    #      - ./influxv2.env
     ports:
       - "8094:8094"
-    environment: 
+    environment:
       - DOCKER_INFLUXDB_INIT_ORG=UCS
       - DOCKER_INFLUXDB_INIT_BUCKET=PlcData
       - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=test1234
