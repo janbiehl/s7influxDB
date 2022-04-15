@@ -1,8 +1,8 @@
-SET basePath = C:\s7InfluxDB
-SET telegrafPath = C:\s7InfluxDB\telegraf
+SET BASEPATH=C:\s7InfluxDB
+SET TELEGRAFPATH=C:\s7InfluxDB\telegraf
 
-if not exist %basePath% mkdir %basePath%
+mkdir %BASEPATH% 
+xcopy docker-compose.yml %BASEPATH%
 
-if not exist %telegrafPath% mkdir %telegrafPath%
-
-xcopy .\telegraf.config %telegrafPath%
+mkdir %TELEGRAFPATH%
+xcopy .\telegraf.config %TELEGRAFPATH%
