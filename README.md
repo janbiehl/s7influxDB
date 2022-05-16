@@ -12,4 +12,4 @@ Hiermit kann auf einem System auf dem Docker installiert ist, eine InfluxDB inkl
 
 Nun sollte Docker die notwendigen Container erstellen und ausführen. 
 Unter der Adresse [http://127.0.0.1:8086](http://127.0.0.1:8086) sollte das InfluxDB Dashboard erreichbar sein.
-Daten können über TCP oder UDP an [http://127.0.0.1:8094](http://127.0.0.1:8094) an telegraf gesendet werden. Telegraf sammelt die daten und schickt diese in die InfluxDB.
+Daten z.B. von eine SPS können via TCP oder UDP an [http://127.0.0.1:8094](http://127.0.0.1:8094) an telegraf gesendet werden. Telegraf sammelt die daten und schickt diese in die InfluxDB.
